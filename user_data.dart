@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Second extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final String Fullname;
   final String email;
-  final String phoneNumber;
-  final String personalID;
+
   final String address;
 
-  Second({
+  const Second({super.key, 
+    // ignore: non_constant_identifier_names
     required this.Fullname,
     required this.email,
-    required this.phoneNumber,
-    required this.personalID,
     required this.address,
   });
 
@@ -19,17 +18,17 @@ class Second extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'List Personal Data',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           Container(
-            padding: EdgeInsets.all(12.0),
-            margin: EdgeInsets.only(bottom: 12.0),
+            padding: const EdgeInsets.all(12.0),
+            margin: const EdgeInsets.only(bottom: 12.0),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black, width: 1),
               borderRadius: BorderRadius.circular(5.0),
@@ -40,7 +39,7 @@ class Second extends StatelessWidget {
                 Text(Fullname),
                 Text(
                   email,
-                  style: TextStyle(fontSize: 14, color: Colors.blue),
+                  style: const TextStyle(fontSize: 14, color: Colors.blue),
                 ),
                 Text(address),
               ],
