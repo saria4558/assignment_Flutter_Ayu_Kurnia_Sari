@@ -1,76 +1,53 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class UserDataDisplay extends StatelessWidget {
-//   final String fullName;
-//   final String email;
-//   final String phoneNumber;
-//   final String personalId;
-//   final String address;
-//   final DateTime? selectedDate;
-//   final bool isPhoneNumberValid;
+class Second extends StatelessWidget {
+  final String Fullname;
+  final String email;
+  final String phoneNumber;
+  final String personalID;
+  final String address;
 
-//   UserDataDisplay({
-//     required this.fullName,
-//     required this.email,
-//     required this.phoneNumber,
-//     required this.personalId,
-//     required this.address,
-//     required this.selectedDate,
-//     required this.isPhoneNumberValid,
-//   });
+  Second({
+    required this.Fullname,
+    required this.email,
+    required this.phoneNumber,
+    required this.personalID,
+    required this.address,
+  });
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('List Personal'),
-//       ),
-//       body: Padding(
-//         padding: EdgeInsets.all(16.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             buildRow(fullName, 'Additional Text Below Full Name'),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-
-//   Widget buildRow(String value, String additionalText) {
-//     return Container(
-//       decoration: BoxDecoration(
-//         border: Border.all(color: Colors.blue),
-//       ),
-//       child: Padding(
-//         padding: EdgeInsets.all(10.0),
-//         child: Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             // Tidak menampilkan teks "Full Name" di sini
-//             RichText(
-//               text: TextSpan(
-//                 style: TextStyle(fontSize: 18, color: Colors.black),
-//                 children: [
-//                   TextSpan(
-//                     text: value,
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             SizedBox(height: 10.0), // Spasi antara teks tambahan dan teks baru
-//             Text(
-//               email,
-//               style: TextStyle(fontSize: 14, color: Colors.blue),
-//             ),
-//             SizedBox(height: 10.0), // Spasi antara teks baru dan data baru
-//             Text(
-//               address,
-//               style: TextStyle(fontSize: 14, color: Colors.black),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'List Personal Data',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(16.0),
+        children: [
+          Container(
+            padding: EdgeInsets.all(12.0),
+            margin: EdgeInsets.only(bottom: 12.0),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 1),
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(Fullname),
+                Text(
+                  email,
+                  style: TextStyle(fontSize: 14, color: Colors.blue),
+                ),
+                Text(address),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
