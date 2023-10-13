@@ -2,6 +2,5 @@ import 'package:flutter/material.dart';
 import 'my_form.dart';
 
 void main() {
-  runApp(PersonalForm());
+  runApp(const PersonalForm());
 }
-
