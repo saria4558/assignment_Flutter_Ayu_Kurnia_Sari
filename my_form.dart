@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'user_data.dart';
 
 class PersonalForm extends StatelessWidget {
+  const PersonalForm({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,7 +14,7 @@ class PersonalForm extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Personal Form',
             style: TextStyle(color: Colors.black),
           ),
@@ -22,21 +24,24 @@ class PersonalForm extends StatelessWidget {
               onPressed: () {
                 // Fungsi yang ingin Anda tambahkan saat ikon ditekan
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.description,
                 color: Colors.black,
               ),
             ),
           ],
         ),
-        body: CardList(),
+        body: const CardList(),
       ),
     );
   }
 }
 
 class CardList extends StatefulWidget {
+  const CardList({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CardListState createState() => _CardListState();
 }
 
@@ -52,23 +57,21 @@ class _CardListState extends State<CardList> {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        margin: EdgeInsets.all(16.0),
+        margin: const EdgeInsets.all(16.0),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Full Name'),
-              ),
+              const Text('Full Name'),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 1),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
-                    labelText: 'Value',
+                  decoration: const InputDecoration(
+                    labelText: 'Enter Full Name',
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
                   ),
@@ -79,18 +82,15 @@ class _CardListState extends State<CardList> {
                   },
                 ),
               ),
-              SizedBox(height: 10.0),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Email'),
-              ),
+              const SizedBox(height: 10.0),
+              const Text('Email'),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 1),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Value',
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -102,7 +102,7 @@ class _CardListState extends State<CardList> {
                   },
                 ),
               ),
-              SizedBox(height: 18.0),
+              const SizedBox(height: 18.0),
               Row(
                 children: [
                   Expanded(
@@ -113,7 +113,7 @@ class _CardListState extends State<CardList> {
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Nomor Telepon',
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -126,7 +126,7 @@ class _CardListState extends State<CardList> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8.0),
+                  const SizedBox(width: 8.0),
                   Expanded(
                     flex: 1,
                     child: Container(
@@ -136,25 +136,22 @@ class _CardListState extends State<CardList> {
                         border: Border.all(color: Colors.black, width: 1),
                         borderRadius: BorderRadius.circular(5.0),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text('Verify'),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 10.0),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Personal ID Number'),
-              ),
+              const SizedBox(height: 10.0),
+              const Text('Personal ID Number'),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 1),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Value',
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -166,18 +163,15 @@ class _CardListState extends State<CardList> {
                   },
                 ),
               ),
-              SizedBox(height: 10.0),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Address'),
-              ),
+              const SizedBox(height: 10.0),
+              const Text('Address'),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 1),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Enter your text here',
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -195,14 +189,12 @@ class _CardListState extends State<CardList> {
                     builder: (context) => Second(
                       Fullname: fullName,
                       email: email,
-                      phoneNumber: phoneNumber,
-                      personalID: personalID,
                       address: address,
                     ),
                   ));
                 },
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text('Submit'),
                 ),
               ),
@@ -213,3 +205,5 @@ class _CardListState extends State<CardList> {
     );
   }
 }
+
+
